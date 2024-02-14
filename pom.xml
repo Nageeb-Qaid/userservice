@@ -15,7 +15,7 @@
 	<name>users-service</name>
 	<description>users-service</description>
 	<properties>
-		<java.version>17.0.6</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

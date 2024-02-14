@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = RestApi.ROOT + "/users")
 @CrossOrigin(origins = "*")
 @RestController
+
 public class UsersRestController {
 
     private final UserService userService;
@@ -44,6 +45,7 @@ public class UsersRestController {
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateUser(@RequestBody User user, @PathVariable Long id)
             throws ItemExistException {
+        //here our comments for userService #1
         return ResponseEntity.ok(
                 userService.updateUser(user, id)
         );

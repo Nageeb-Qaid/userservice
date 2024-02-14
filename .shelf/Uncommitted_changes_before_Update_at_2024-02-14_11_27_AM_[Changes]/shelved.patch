@@ -1,0 +1,61 @@
+Index: releases/1-1-0/CHANGELOG
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/releases/1-1-0/CHANGELOG b/releases/1-1-0/CHANGELOG
+new file mode 100644
+--- /dev/null	(date 1707899009699)
++++ b/releases/1-1-0/CHANGELOG	(date 1707899009699)
+@@ -0,0 +1,1 @@
++added new comment
+\ No newline at end of file
+Index: src/main/java/com/example/usersservice/UsersServiceApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.usersservice;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\n\r\n@SpringBootApplication\r\npublic class UsersServiceApplication {\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSpringApplication.run(UsersServiceApplication.class, args);\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/usersservice/UsersServiceApplication.java b/src/main/java/com/example/usersservice/UsersServiceApplication.java
+--- a/src/main/java/com/example/usersservice/UsersServiceApplication.java	(revision a1ad438586d3bb5ae7b1e0dc9ff9260144647f10)
++++ b/src/main/java/com/example/usersservice/UsersServiceApplication.java	(date 1707897916733)
+@@ -7,7 +7,8 @@
+ public class UsersServiceApplication {
+ 
+ 	public static void main(String[] args) {
+-		SpringApplication.run(UsersServiceApplication.class, args);
++
++			SpringApplication.run(UsersServiceApplication.class, args);
+ 	}
+ 
+ }
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>2.0.4.RELEASE</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>com.example</groupId>\r\n\t<artifactId>users-service</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<name>users-service</name>\r\n\t<description>users-service</description>\r\n\t<properties>\r\n\t\t<java.version>11</java.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\r\n\t\t<!--Database -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.h2database</groupId>\r\n\t\t\t<artifactId>h2</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\r\n\t\t<!--Tools -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\r\n\t\t<!--API Documentation -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.springfox</groupId>\r\n\t\t\t<artifactId>springfox-swagger2</artifactId>\r\n\t\t\t<version>2.9.2</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.springfox</groupId>\r\n\t\t\t<artifactId>springfox-swagger-ui</artifactId>\r\n\t\t\t<version>2.9.2</version>\r\n\t\t</dependency>\r\n\r\n\t\t<!--Test -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\r\n\r\n\t\t<!--Required for Java 10, the JAXB APIs are not any more included -->\r\n\t\t<dependency>\r\n\t\t\t<groupId>javax.xml.bind</groupId>\r\n\t\t\t<artifactId>jaxb-api</artifactId>\r\n\t\t\t<version>2.3.1</version>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.javassist</groupId>\r\n\t\t\t<artifactId>javassist</artifactId>\r\n\t\t\t<version>3.23.1-GA</version>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<excludes>\r\n\t\t\t\t\t\t<exclude>\r\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t</exclude>\r\n\t\t\t\t\t</excludes>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n\t<distributionManagement>\r\n\t\t<repository>\r\n\t\t\t<id>github</id>\r\n\t\t\t<name>GitHub Packages</name>\r\n\t\t\t<url>https://maven.pkg.github.com/osamaabdulsattar/usersservice</url>\r\n\t\t</repository>\r\n\t</distributionManagement>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision a1ad438586d3bb5ae7b1e0dc9ff9260144647f10)
++++ b/pom.xml	(date 1707896594701)
+@@ -5,7 +5,8 @@
+ 	<parent>
+ 		<groupId>org.springframework.boot</groupId>
+ 		<artifactId>spring-boot-starter-parent</artifactId>
+-		<version>2.0.4.RELEASE</version>
++		<!-- <version>2.0.4.RELEASE</version> -->
++		<version>3.0.4</version>
+ 		<relativePath/> <!-- lookup parent from repository -->
+ 	</parent>
+ 	<groupId>com.example</groupId>
+@@ -14,7 +15,7 @@
+ 	<name>users-service</name>
+ 	<description>users-service</description>
+ 	<properties>
+-		<java.version>11</java.version>
++		<java.version>17</java.version>
+ 	</properties>
+ 	<dependencies>
+ 		<dependency>
